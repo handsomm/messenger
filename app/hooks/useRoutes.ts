@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { HiCheck } from 'react-icons/hi'
 import { HiArrowLeftOnRectangle, HiUsers } from 'react-icons/hi2'
 import { signOut } from "next-auth/react";
@@ -12,9 +12,9 @@ const useRoutes = () => {
     const routes = useMemo(() => [
         {
             label: 'Chat',
-            href: '/conversation',
+            href: '/conversations',
             icon: HiCheck,
-            active: pathname === '/conversation' || !!conversationId
+            active: pathname === '/conversations' || !!conversationId
         },
         {
             label: 'Users',

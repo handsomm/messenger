@@ -1,11 +1,11 @@
-import React from 'react'
-import Sidebar from '../components/sidebar/Sidebar'
-import getUser from '../actions/getUsers'
-import getUsers from '../actions/getUsers'
-import UserList from './components/UserList'
+import React from 'react';
+import Sidebar from '../components/sidebar/Sidebar';
+import getUser from '../actions/getUsers';
+import getUsers from '../actions/getUsers';
+import UserList from './components/UserList';
 
-const Layout = async ({ children }: { children: React.ReactNode }) => {
-    const users = await getUsers()
+const UserLayout = async ({ children }: { children: React.ReactNode }) => {
+    const users = await getUsers();
     return (
         <Sidebar>
             <div className='h-full'>
@@ -13,7 +13,7 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
                 {children}
             </div>
         </Sidebar>
-    )
-}
+    );
+};
 
-export default Layout
+export default UserLayout;
